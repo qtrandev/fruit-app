@@ -124,10 +124,14 @@ function FruitMap( {fruits}) {
           <textarea id='fruitDescription'></textarea>
           <button onClick={ (e) => {
             e.preventDefault();
+            let tipValue = document.getElementById("fruitDescription").value.trim();
+            if (tipValue.length < 2) {
+              return;
+            }
             setFruitTips([
               ...fruitTips, {
               fruits: getFruitNavList(),
-              description: document.getElementById("fruitDescription").value,
+              description: tipValue,
               latitude: clickLocation.latitude,
               longitude: clickLocation.longitude
               }
