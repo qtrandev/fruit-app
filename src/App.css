@@ -1,6 +1,16 @@
 .App {
   font-size: 10px;
-  text-align: center;
+  display: flex;
+}
+
+.nav-list {
+  width: 10vw;
+  height: 100vh;
+}
+
+.map-pane {
+  width: 90vw;
+  height: 100vh;
 }
 
 body {
@@ -19,7 +29,7 @@ h2 {
 }
 
 img {
-  width: 200px;
+  width: 20px;
 }
 
 ul {

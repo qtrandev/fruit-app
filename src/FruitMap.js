@@ -4,8 +4,8 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 
 function FruitMap() {
   const [ viewport, setViewPort ] = useState({
-    width: 900,
-    height: 900,
+    width: '100%',
+    height: '100%',
     latitude: 26.233217,
     longitude: -80.230901,
     zoom: 10
@@ -44,6 +44,7 @@ function FruitMap() {
       longitude: pointerevent.lngLat[0]
     })
     updateViewPort(pointerevent.lngLat[1], pointerevent.lngLat[0])
+    setSelectedTip(null);
   }
 
   const [ fruitTips, setFruitTips ] = useState([
@@ -84,6 +85,7 @@ function FruitMap() {
           e.preventDefault();
           setSelectedTip(fruitTip);
           updateViewPort(fruitTip.latitude, fruitTip.longitude);
+          setClickLocation(null);
         }}><p>{fruitTip.fruits.toString()}</p></button>
       </Marker>
       ))}

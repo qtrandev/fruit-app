@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 const ItemList = ({ fruits, toggleItem }) => (
   <ul>
     {fruits.map(fruit =>
-      <li>{fruit.name}<br/><img src={fruit.image} alt=""/><br/>{fruit.desc}</li>
+      <li key={fruit.desc}>{fruit.name}<br/><img src={fruit.image} alt=""/><br/>{fruit.desc}</li>
     )}
   </ul>
 )

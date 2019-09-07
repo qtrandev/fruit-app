@@ -6,11 +6,12 @@ import FruitMap from './FruitMap';
 function App() {
   return (
     <div className="App">
-      <h1>Fruits App</h1>
-      <h2>
+      <div className="nav-list">
         <ItemList />
-      </h2>
-      <FruitMap />
+      </div>
+      <div className="map-pane">
+        <FruitMap />
+      </div>
     </div>
   );
 }
