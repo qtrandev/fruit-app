@@ -2,6 +2,7 @@ let initial = [
   { 
     id: 100,
     name: 'Rambutan',
+    selection: 'rambutan',
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Rambutans.JPG/920px-Rambutans.JPG',
     desc: 'Rambutans are delicious!',
     enabled: false
@@ -9,6 +10,7 @@ let initial = [
   { 
     id: 101,
     name: 'Jackfruit',
+    selection: 'jackfruit',
     image: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Jackfruit_hanging.JPG',
     desc: 'Jackfruits are the best!',
     enabled: false
@@ -16,6 +18,7 @@ let initial = [
   { 
     id: 102,
     name: 'Longan',
+    selection: 'longan',
     image: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Dimocarpus_longan_fruits.jpg',
     desc: 'Longans are sweet and tasty!',
     enabled: true
@@ -23,6 +26,7 @@ let initial = [
   { 
     id: 103,
     name: 'Sugar-apple',
+    selection: 'sugar-apple',
     image: 'https://upload.wikimedia.org/wikipedia/commons/4/48/Sugar_apple_with_cross_section.jpg',
     desc: 'Sugar-apples are tasty and custardy!',
     enabled: false
@@ -37,6 +41,7 @@ const fruits = (state = initial, action) => {
           {
             id: action.id,
             name: action.name,
+            selection: action.selection,
             image: action.image,
             desc: action.desc,
             enabled: action.enabled

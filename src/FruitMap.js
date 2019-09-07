@@ -1,8 +1,9 @@
+import { connect } from 'react-redux'
 import React,{ useState } from 'react';
 import ReactMapGL, { GeolocateControl, NavigationControl, Marker, Popup } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css'
 
-function FruitMap() {
+function FruitMap( {fruits}) {
   const [ viewport, setViewPort ] = useState({
     width: '100%',
     height: '100%',
@@ -45,6 +46,15 @@ function FruitMap() {
     })
     updateViewPort(pointerevent.lngLat[1], pointerevent.lngLat[0])
     setSelectedTip(null);
+  }
+
+  const getFruitNavList = () => {
+    let enabledFruits = [];
+    fruits.map(fruit => {
+      if (fruit.enabled) enabledFruits.push(fruit.selection);
+      return null;
+    });
+    return enabledFruits;
   }
 
   const [ fruitTips, setFruitTips ] = useState([
@@ -110,19 +120,13 @@ function FruitMap() {
           closeOnClick={false}
           onClose={() => setClickLocation(null)}
           anchor="bottom" >
-          <h3><select id='fruitSelector'>
-            <option value="mango">Mango</option>
-            <option value="jackfruit">Jackfruit</option>
-            <option value="longan">Longan</option>
-            <option value="coconut">Coconut</option>
-          </select></h3>
-          Tip:
+          <h2>Tip:</h2>
           <textarea id='fruitDescription'></textarea>
           <button onClick={ (e) => {
             e.preventDefault();
             setFruitTips([
               ...fruitTips, {
-              fruits: [document.getElementById("fruitSelector").value],
+              fruits: getFruitNavList(),
               description: document.getElementById("fruitDescription").value,
               latitude: clickLocation.latitude,
               longitude: clickLocation.longitude
@@ -139,4 +143,15 @@ function FruitMap() {
   );
 }
 
-export default FruitMap;
+const mapStateToProps = state => ({
+  fruits: state.fruits
+})
+
+const mapDispatchToProps = dispatch => ({
+  
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(FruitMap)

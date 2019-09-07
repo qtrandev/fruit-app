@@ -23,6 +23,7 @@ ItemList.propTypes = {
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
+      selection: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,
       desc: PropTypes.string.isRequired,
       enabled: PropTypes.bool.isRequired
