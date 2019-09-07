@@ -7,3 +7,8 @@ export const addFruit = (name, image, desc) => ({
   image,
   desc
 })
+
+export const enableFruit = id => ({
+  type: 'ENABLE_FRUIT',
+  id
+})

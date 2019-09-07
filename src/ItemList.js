@@ -1,11 +1,19 @@
 import { connect } from 'react-redux'
+import { enableFruit } from './actions'
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const ItemList = ({ fruits, toggleItem }) => (
+const ItemList = ({ fruits, enableFruit }) => (
   <ul>
     {fruits.map(fruit =>
-      <li key={fruit.desc}>{fruit.name}<br/><img src={fruit.image} alt=""/><br/>{fruit.desc}</li>
+      <li 
+        class={fruit.enabled? `fruit-toggle-enabled`:`fruit-toggle`} 
+        key={fruit.desc}
+        onClick= {(e) => {
+          enableFruit(fruit.id);
+        }}>
+          {fruit.name}<br/><img src={fruit.image} alt={fruit.desc}/>
+      </li>
     )}
   </ul>
 )
@@ -17,6 +25,7 @@ ItemList.propTypes = {
       name: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,
       desc: PropTypes.string.isRequired,
+      enabled: PropTypes.bool.isRequired
     }).isRequired
   ).isRequired
 }
@@ -26,7 +35,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  toggleItem: id => dispatch(null)
+  enableFruit: id => dispatch(enableFruit(id))
 })
 
 export default connect(

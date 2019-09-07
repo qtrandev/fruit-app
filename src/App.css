@@ -17,19 +17,8 @@ body {
   background-color: white;
 }
 
-h1 {
-  font-size: 3rem;
-  color: royalblue;
-  margin-left: 1px;
-}
-
-h2 {
-  font-size: 2rem;
-  color: green;
-}
-
 img {
-  width: 20px;
+  width: 60px;
 }
 
 ul {
@@ -37,8 +26,17 @@ ul {
   list-style-type: none;
 }
 
-li {
+.fruit-toggle-enabled {
   background-color: rgb(40, 172, 121);
+  padding: 10px;
+  margin: 20px;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: #009CC2;
+}
+
+.fruit-toggle {
+  background-color: gray;
   padding: 10px;
   margin: 20px;
   border-radius: 10px;
@@ -69,15 +67,4 @@ input {
   margin: 5px;
   font-size: 15px;
   color: white;
-}
-
-.marker-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.marker-btn img {
-  width: 20px;
-  height: 20px;
 }
