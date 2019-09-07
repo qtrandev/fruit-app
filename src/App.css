@@ -51,6 +51,8 @@ ul {
   background-color: rgb(40, 172, 121);
   /*border-radius: 80%;*/
   /*transform: rotateY(180deg);*/
+  animation-name: scale-up;
+  animation-duration: 1s;
 }
 
 button {
@@ -61,12 +63,13 @@ button {
   font-size: 15px;
 }
 
-input {
-  margin: 2px;
-  border: 1px solid;
+.tip-popup {
   padding: 10px;
-  font-size: 15px;
-  border-radius: 5px;
+}
+
+.tip-popup:hover {
+  animation-name: grow;
+  animation-duration: 1s;
 }
 
 .mapMarker {
@@ -77,3 +80,29 @@ input {
   font-size: 15px;
   color: white;
 }
+
+.mapMarker:hover {
+  animation-name: scale-up;
+  animation-duration: 1s;
+  /*animation-delay: 1s;*/
+  /*animation-fill-mode: forwards;*/
+}
+
+@keyframes grow {
+  0%   {padding: 10px}
+  50%  {padding: 20px}
+  100% {padding: 10px}
+}
+
+@keyframes scale-up {
+  0%   {transform: scale(1.0);}
+  50%  {transform: scale(1.1);}
+  100% {transform: scale(1.0);}
+}
+
+@keyframes fade {
+  0%   {opacity: 1}
+  50%  {opacity: 0.5}
+  100% {opacity: 1}
+}
+

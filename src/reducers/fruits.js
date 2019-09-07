@@ -1,11 +1,11 @@
 let initial = [
   { 
     id: 100,
-    name: 'Rambutan',
-    selection: 'rambutan',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Rambutans.JPG/920px-Rambutans.JPG',
-    desc: 'Rambutans are delicious!',
-    enabled: false
+    name: 'Mango',
+    selection: 'mango',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/4/48/Mango_Maya.jpg',
+    desc: 'Mangos are super sweet!',
+    enabled: true
   },
   { 
     id: 101,
@@ -21,12 +21,20 @@ let initial = [
     selection: 'longan',
     image: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Dimocarpus_longan_fruits.jpg',
     desc: 'Longans are sweet and tasty!',
-    enabled: true
+    enabled: false
   },
   { 
     id: 103,
+    name: 'Rambutan',
+    selection: 'rambutan',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Rambutans.JPG/920px-Rambutans.JPG',
+    desc: 'Rambutans are delicious!',
+    enabled: false
+  },
+  { 
+    id: 104,
     name: 'Sugar-apple',
-    selection: 'sugar-apple',
+    selection: 'sugarapple',
     image: 'https://upload.wikimedia.org/wikipedia/commons/4/48/Sugar_apple_with_cross_section.jpg',
     desc: 'Sugar-apples are tasty and custardy!',
     enabled: false

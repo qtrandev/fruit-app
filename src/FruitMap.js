@@ -108,7 +108,7 @@ function FruitMap( {fruits}) {
           closeOnClick={true}
           onClose={() => setSelectedTip(null)}
           anchor="bottom" >
-          <h3>{selectedTip.description}</h3>
+          <h3 class="tip-popup">{selectedTip.description}</h3>
         </Popup>
       }
 
@@ -121,11 +121,12 @@ function FruitMap( {fruits}) {
           onClose={() => setClickLocation(null)}
           anchor="bottom" >
           <h2>Tip:</h2>
-          <textarea id='fruitDescription'></textarea>
+          <textarea id='fruitDescription' placeholder='Enter a fruit tip for the selected fruits'></textarea>
           <button onClick={ (e) => {
             e.preventDefault();
             let tipValue = document.getElementById("fruitDescription").value.trim();
             if (tipValue.length < 2) {
+              document.getElementById("fruitDescription").value = '';
               return;
             }
             setFruitTips([
