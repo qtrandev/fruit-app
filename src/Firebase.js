@@ -1,6 +1,7 @@
 import firebase from 'firebase';
 
 let databaseSingleton;
+let numberId = 10;
 
 const config = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -45,6 +46,10 @@ class Firebase {
       .catch(error => {
         console.log("Got error from Firebase: "+JSON.stringify(error));
       });
+  }
+
+  writeFruitTip(tip) {
+    databaseSingleton.ref('tips/' + numberId++).set(tip);
   }
 }
 export default Firebase;

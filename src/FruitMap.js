@@ -41,10 +41,6 @@ function FruitMap( {fruits}) {
   }
 
   const _onClick = pointerevent => {
-    let fire = new Firebase();
-    fire.requestFruitTips((data) => {
-      setFruitTips(data);
-    });
     setClickLocation({
       latitude: pointerevent.lngLat[1],
       longitude: pointerevent.lngLat[0]
@@ -54,9 +50,11 @@ function FruitMap( {fruits}) {
   }
 
   const getFruitNavList = () => {
-    let enabledFruits = [];
+    let enabledFruits = '';
     fruits.map(fruit => {
-      if (fruit.enabled) enabledFruits.push(fruit.selection);
+      if (fruit.enabled) {
+        enabledFruits = enabledFruits + enabledFruits.length>1?',':'' + (fruit.selection);
+      }
       return null;
     });
     return enabledFruits;
@@ -134,14 +132,19 @@ function FruitMap( {fruits}) {
               document.getElementById("fruitDescription").value = '';
               return;
             }
-            setFruitTips([
-              ...fruitTips, {
+            let obj = {
               fruits: getFruitNavList(),
               description: tipValue,
               latitude: clickLocation.latitude,
               longitude: clickLocation.longitude
-              }
+              };
+            setFruitTips([
+              ...fruitTips, obj
             ]);
+            new Firebase().writeFruitTip(obj);
+            new Firebase().requestFruitTips((data) => {
+              setFruitTips(data);
+            });
             setClickLocation(null);
           }}>Add</button>
         </Popup>
