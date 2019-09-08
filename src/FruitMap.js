@@ -2,6 +2,7 @@ import { connect } from 'react-redux'
 import React,{ useState } from 'react';
 import ReactMapGL, { GeolocateControl, NavigationControl, Marker, Popup } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css'
+import Firebase from './Firebase';
 
 function FruitMap( {fruits}) {
   const [ viewport, setViewPort ] = useState({
@@ -40,6 +41,10 @@ function FruitMap( {fruits}) {
   }
 
   const _onClick = pointerevent => {
+    let fire = new Firebase();
+    fire.requestFruitTips((data) => {
+      setFruitTips(data);
+    });
     setClickLocation({
       latitude: pointerevent.lngLat[1],
       longitude: pointerevent.lngLat[0]
@@ -59,19 +64,19 @@ function FruitMap( {fruits}) {
 
   const [ fruitTips, setFruitTips ] = useState([
     {
-      fruits: ['mango','jackfruit'],
+      fruits: 'mango,jackfruit',
       description: 'Lots of mangos and jackfruit trees here. $1 a mango. $3 per pound jackfruit',
       latitude: 26.233217,
       longitude: -80.230901
     },
     {
-      fruits: ['mango'],
+      fruits: 'mango',
       description: 'Big mango tree',
       latitude: 26.333217,
       longitude: -80.130901
     },
     {
-      fruits: ['jackfruit'],
+      fruits: 'jackfruit',
       description: 'Lots of jackfruit trees here.',
       latitude: 26.133217,
       longitude: -80.430901
@@ -96,7 +101,7 @@ function FruitMap( {fruits}) {
           setSelectedTip(fruitTip);
           updateViewPort(fruitTip.latitude, fruitTip.longitude);
           setClickLocation(null);
-        }}><p>{fruitTip.fruits.toString()}</p></button>
+        }}><p>{fruitTip.fruits}</p></button>
       </Marker>
       ))}
 
