@@ -29,9 +29,16 @@ function FruitMap( {fruits}) {
     padding: '10px'
   };
 
+  const refreshData = () =>{
+    new Firebase().requestFruitTips((data) => {
+      setFruitTips(data);
+    });
+  }
+
   const _onViewportChange = viewport => setViewPort({...viewport })
 
   const updateViewPort = (latitude, longitude) => {
+    refreshData();
     setViewPort({
       ...viewport,
       latitude: latitude,
@@ -53,7 +60,7 @@ function FruitMap( {fruits}) {
     let enabledFruits = '';
     fruits.map(fruit => {
       if (fruit.enabled) {
-        enabledFruits = enabledFruits + enabledFruits.length>1?',':'' + (fruit.selection);
+        enabledFruits = enabledFruits + (enabledFruits.length>0?',':'') + fruit.selection;
       }
       return null;
     });
@@ -142,9 +149,6 @@ function FruitMap( {fruits}) {
               ...fruitTips, obj
             ]);
             new Firebase().writeFruitTip(obj);
-            new Firebase().requestFruitTips((data) => {
-              setFruitTips(data);
-            });
             setClickLocation(null);
           }}>Add</button>
         </Popup>
