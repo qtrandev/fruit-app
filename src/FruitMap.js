@@ -100,7 +100,7 @@ function FruitMap( {fruits}) {
           trackUserLocation={true}
       />
       {fruitTips.map(fruitTip => (
-      <Marker key={fruitTip.latitude} latitude={fruitTip.latitude} longitude={fruitTip.longitude} offsetLeft={-20} offsetTop={-10}>
+      <Marker key={fruitTip.latitude} latitude={fruitTip.latitude} longitude={fruitTip.longitude} offsetLeft={-17} offsetTop={-62}>
         <a href="#top" className="mapMarker" onClick={ (e) => {
           e.preventDefault();
           setSelectedTip(fruitTip);
