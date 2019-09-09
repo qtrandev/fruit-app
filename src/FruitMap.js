@@ -100,8 +100,8 @@ function FruitMap( {fruits}) {
           trackUserLocation={true}
       />
       {fruitTips.map(fruitTip => (
-      <Marker latitude={fruitTip.latitude} longitude={fruitTip.longitude} offsetLeft={-20} offsetTop={-10}>
-        <button class="mapMarker" onClick={ (e) => {
+      <Marker key={fruitTip.latitude} latitude={fruitTip.latitude} longitude={fruitTip.longitude} offsetLeft={-20} offsetTop={-10}>
+        <button className="mapMarker" onClick={ (e) => {
           e.preventDefault();
           setSelectedTip(fruitTip);
           updateViewPort(fruitTip.latitude, fruitTip.longitude);
@@ -118,7 +118,7 @@ function FruitMap( {fruits}) {
           closeOnClick={true}
           onClose={() => setSelectedTip(null)}
           anchor="bottom" >
-          <h3 class="tip-popup">{selectedTip.description}</h3>
+          <h3 className="tip-popup">{selectedTip.description}</h3>
         </Popup>
       }
 

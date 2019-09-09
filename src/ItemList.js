@@ -7,7 +7,7 @@ const ItemList = ({ fruits, enableFruit }) => (
   <ul>
     {fruits.map(fruit =>
       <li 
-        class={fruit.enabled? `fruit-toggle-enabled`:`fruit-toggle`} 
+        className={fruit.enabled? `fruit-toggle-enabled`:`fruit-toggle`} 
         key={fruit.desc}
         onClick= {(e) => {
           enableFruit(fruit.id);
