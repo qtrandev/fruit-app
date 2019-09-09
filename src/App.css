@@ -55,7 +55,7 @@ ul {
   animation-duration: 1s;
 }
 
-button {
+.addButton {
   background-color: brown;
   padding: 10px;
   border-radius: 5px;
@@ -73,12 +73,8 @@ button {
 }
 
 .mapMarker {
-  background-color: green;
-  padding: 10px;
-  border-radius: 5px;
-  margin: 5px;
-  font-size: 15px;
-  color: white;
+  font-size: 60px;
+  color: green;
 }
 
 .mapMarker:hover {

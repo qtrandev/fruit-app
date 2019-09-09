@@ -101,12 +101,12 @@ function FruitMap( {fruits}) {
       />
       {fruitTips.map(fruitTip => (
       <Marker key={fruitTip.latitude} latitude={fruitTip.latitude} longitude={fruitTip.longitude} offsetLeft={-20} offsetTop={-10}>
-        <button className="mapMarker" onClick={ (e) => {
+        <a href="#top" className="mapMarker" onClick={ (e) => {
           e.preventDefault();
           setSelectedTip(fruitTip);
           updateViewPort(fruitTip.latitude, fruitTip.longitude);
           setClickLocation(null);
-        }}><p>{fruitTip.fruits}</p></button>
+        }}><i className="fa fa-map-marker"></i></a>
       </Marker>
       ))}
 
@@ -118,6 +118,7 @@ function FruitMap( {fruits}) {
           closeOnClick={true}
           onClose={() => setSelectedTip(null)}
           anchor="bottom" >
+          <h2> {selectedTip.fruits} </h2>
           <h3 className="tip-popup">{selectedTip.description}</h3>
         </Popup>
       }
@@ -132,7 +133,7 @@ function FruitMap( {fruits}) {
           anchor="bottom" >
           <h2>Tip:</h2>
           <textarea id='fruitDescription' placeholder='Enter a fruit tip for the selected fruits'></textarea>
-          <button onClick={ (e) => {
+          <button className="addButton" onClick={ (e) => {
             e.preventDefault();
             let tipValue = document.getElementById("fruitDescription").value.trim();
             if (tipValue.length < 2) {
