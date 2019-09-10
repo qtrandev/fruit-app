@@ -8,6 +8,9 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import Button from '@material-ui/core/Button';
+import FruitCardDisplay from './components/FruitCardDisplay';
+
+// Fruit icons
 import mango from './icons/mango.svg';
 import jackfruit from './icons/durian.svg';
 import longan from './icons/lychee.svg';
@@ -151,7 +154,7 @@ function FruitMap( {fruits}) {
           <Card>
             <CardContent>
               <Typography variant="h4" component="h4">
-                { selectedTip.fruits }
+                <FruitCardDisplay fruits={ selectedTip.fruits } />
               </Typography>
               <Typography variant="body2" component="p">
                 { selectedTip.description }

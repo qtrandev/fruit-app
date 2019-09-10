@@ -21,4 +21,12 @@ class about extends Component {
   }
 }
 
+/* Fruit direct icon images
+mango: https://image.flaticon.com/icons/svg/700/700804.svg
+durian: https://image.flaticon.com/icons/svg/765/765534.svg
+lychee: https://image.flaticon.com/icons/svg/575/575451.svg
+rambutan: https://image.flaticon.com/icons/svg/1155/1155280.svg
+custard apple: https://image.flaticon.com/icons/svg/1899/1899230.svg
+*/
+
 export default about
