@@ -16,6 +16,10 @@
   height: 100vh;
 }
 
+.about-pane {
+  margin: 10px;
+}
+
 body {
   background-color: white;
 }
