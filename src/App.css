@@ -68,7 +68,7 @@ ul {
 }
 
 .tip-popup:hover {
-  animation-name: grow;
+  animation-name: scale-up;
   animation-duration: 1s;
 }
 

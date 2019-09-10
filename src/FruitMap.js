@@ -106,7 +106,7 @@ function FruitMap( {fruits}) {
           setSelectedTip(fruitTip);
           updateViewPort(fruitTip.latitude, fruitTip.longitude);
           setClickLocation(null);
-        }}><i className="fa fa-map-marker"></i></a>
+        }}><i className="fa fa-map-marker tip-popup"></i></a>
       </Marker>
       ))}
 

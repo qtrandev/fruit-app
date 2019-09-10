@@ -24,8 +24,7 @@ class Firebase {
   makeRequest() {
     databaseSingleton.ref('/tips').once('value')
       .then(sections => {
-          console.log("Got something from Firebase: "+JSON.stringify(sections));
-          //dispatch(addItem(sections.child("test").val()));
+          //console.log("Got something from Firebase: "+JSON.stringify(sections));
       })
       .catch(error => {
         console.log("Got error from Firebase: "+JSON.stringify(error));
@@ -36,12 +35,11 @@ class Firebase {
     let result = [];
     databaseSingleton.ref('/tips').once('value')
       .then(sections => {
-          console.log("Got something from Firebase: "+JSON.stringify(sections));
+          //console.log("Got something from Firebase: "+JSON.stringify(sections));
           let obj = sections.val();
           for (var x in obj) {
             result.push(obj[x]);
           }
-          //console.log("RESULT"+JSON.stringify(result[1]));
           callback(result);
       })
       .catch(error => {
