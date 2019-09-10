@@ -62,12 +62,8 @@ ul {
   animation-duration: 1s;
 }
 
-.addButton {
-  background-color: brown;
-  padding: 10px;
-  border-radius: 5px;
-  margin: 5px;
-  font-size: 15px;
+.fruitTipAdd {
+  margin: 10px;
 }
 
 .tip-popup {

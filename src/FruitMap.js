@@ -3,6 +3,11 @@ import React,{ useState } from 'react';
 import ReactMapGL, { GeolocateControl, NavigationControl, Marker, Popup } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css'
 import Firebase from './Firebase';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+import TextareaAutosize from '@material-ui/core/TextareaAutosize';
+import Button from '@material-ui/core/Button';
 
 function FruitMap( {fruits}) {
   const [ viewport, setViewPort ] = useState({
@@ -54,6 +59,26 @@ function FruitMap( {fruits}) {
     })
     updateViewPort(pointerevent.lngLat[1], pointerevent.lngLat[0])
     setSelectedTip(null);
+  }
+
+  const addFruitTipClick = (e) => {
+    e.preventDefault();
+    let tipValue = document.getElementById("fruitDescription").value;
+    if (tipValue.trim().length < 2) {
+      document.getElementById("fruitDescription").value = '';
+      return;
+    }
+    let obj = {
+      fruits: getFruitNavList(),
+      description: tipValue,
+      latitude: clickLocation.latitude,
+      longitude: clickLocation.longitude
+      };
+    setFruitTips([
+      ...fruitTips, obj
+    ]);
+    new Firebase().writeFruitTip(obj);
+    setClickLocation(null);
   }
 
   const getFruitNavList = () => {
@@ -118,8 +143,16 @@ function FruitMap( {fruits}) {
           closeOnClick={true}
           onClose={() => setSelectedTip(null)}
           anchor="bottom" >
-          <h2> {selectedTip.fruits} </h2>
-          <h3 className="tip-popup">{selectedTip.description}</h3>
+          <Card>
+            <CardContent>
+              <Typography variant="h4" component="h4">
+                { selectedTip.fruits }
+              </Typography>
+              <Typography variant="body2" component="p">
+                { selectedTip.description }
+              </Typography>
+            </CardContent>
+          </Card>
         </Popup>
       }
 
@@ -131,27 +164,17 @@ function FruitMap( {fruits}) {
           closeOnClick={false}
           onClose={() => setClickLocation(null)}
           anchor="bottom" >
-          <h2>Tip:</h2>
-          <textarea id='fruitDescription' placeholder='Enter a fruit tip for the selected fruits'></textarea>
-          <button className="addButton" onClick={ (e) => {
-            e.preventDefault();
-            let tipValue = document.getElementById("fruitDescription").value.trim();
-            if (tipValue.length < 2) {
-              document.getElementById("fruitDescription").value = '';
-              return;
-            }
-            let obj = {
-              fruits: getFruitNavList(),
-              description: tipValue,
-              latitude: clickLocation.latitude,
-              longitude: clickLocation.longitude
-              };
-            setFruitTips([
-              ...fruitTips, obj
-            ]);
-            new Firebase().writeFruitTip(obj);
-            setClickLocation(null);
-          }}>Add</button>
+          <Card className="fruitTipAdd">
+            <CardContent>
+              <Typography variant="h5" component="h2">
+                Add Tip
+              </Typography>
+              <br/>
+              <TextareaAutosize id='fruitDescription' rows={5} placeholder="Enter a fruit tip for the selected fruits" />;
+              <br/><br/>
+              <Button variant="contained" color="secondary" onClick={ addFruitTipClick }>Add</Button>
+            </CardContent>
+          </Card>
         </Popup>
       }
       <div className="nav" style={navStyle}>
