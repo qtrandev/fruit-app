@@ -1,18 +1,19 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import ItemList from './ItemList';
-import FruitMap from './FruitMap';
+
+//Pages
+import home from './pages/home';
+import about from './pages/about';
 
 function App() {
   return (
-    <div className="App">
-      <div className="nav-list">
-        <ItemList />
-      </div>
-      <div className="map-pane">
-        <FruitMap />
-      </div>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={home}></Route>
+        <Route exact path="/about" component={about}></Route>
+      </Switch>
+    </Router>
   );
 }
 
