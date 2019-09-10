@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 class about extends Component {
   render() {
@@ -9,7 +10,11 @@ class about extends Component {
 
         <p>This is the fruit app.</p>
 
-        <Link to="/"><button>Home</button></Link>
+        <Link to="/">
+          <Button variant="contained" color="secondary">
+            Home
+          </Button>
+        </Link>
       </div>
     )
   }
