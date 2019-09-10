@@ -8,6 +8,11 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import Button from '@material-ui/core/Button';
+import mango from './icons/mango.svg';
+import jackfruit from './icons/durian.svg';
+import longan from './icons/lychee.svg';
+import rambutan from './icons/rambutan.svg';
+import sugarapple from './icons/custard-apple.svg';
 
 function FruitMap( {fruits}) {
   const [ viewport, setViewPort ] = useState({
@@ -170,9 +175,16 @@ function FruitMap( {fruits}) {
                 Add Tip
               </Typography>
               <br/>
+              <div className="fruitSelector">
+                <img src={mango} alt="Mango" width="30px" height="30px"></img>
+                <img src={jackfruit} alt="Jackfruit" width="30px" height="30px"></img>
+                <img src={longan} alt="Longan" width="30px" height="30px"></img>
+                <img src={rambutan} alt="Rambutan" width="30px" height="30px"></img>
+                <img src={sugarapple} alt="Sugar-apple" width="30px" height="30px"></img>
+              </div>
               <TextareaAutosize id='fruitDescription' rows={5} placeholder="Enter a fruit tip for the selected fruits" />;
               <br/><br/>
-              <Button variant="contained" color="secondary" onClick={ addFruitTipClick }>Add</Button>
+              <Button variant="contained" color="primary" onClick={ addFruitTipClick }>Add</Button>
             </CardContent>
           </Card>
         </Popup>
