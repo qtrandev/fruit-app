@@ -1,43 +1,32 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
+// Fruit icons
 import mango from '../icons/mango.svg';
 import jackfruit from '../icons/durian.svg';
 import longan from '../icons/lychee.svg';
 import rambutan from '../icons/rambutan.svg';
 import sugarapple from '../icons/custard-apple.svg';
 
-const iconLookup = [
-  ["mango", mango],
-  ["jackfruit", jackfruit],
-  ["longan", longan],
-  ["rambutan", rambutan],
-  ["sugarapple", sugarapple]
-];
-
-const returnFruits = (fruits) => {
-  let fruitStrings = fruits.split(",");
-  let fruitList = [];
-  for (let i=0; i<fruitStrings.length; i++){
-    for (let j=0; j<iconLookup.length; j++){ 
-      if (fruitStrings[i] === iconLookup[j][0]) {
-        fruitList.push(iconLookup[j][1]);
-        break;
-      }
-    }
-  }
-
-  return (
-    <div>
-      {fruitList.map(fruit => 
-        <img src={fruit} alt="Fruit"></img>
-      )}
-    </div>
-  )
-}
+const iconLookup = {
+  "mango": mango,
+  "jackfruit": jackfruit,
+  "longan": longan,
+  "rambutan": rambutan,
+  "sugarapple": sugarapple
+};
 
 class FruitCardDisplay extends Component {
   render() {
-    return returnFruits(this.props.fruits)
+    if (this.props.fruits.trim().length < 1) return (<div></div>);
+    return (this.props.fruits.split(",").map(fruit => 
+      <img src={iconLookup[fruit]} alt="fruit"></img>
+    ));
   }
+}
+
+FruitCardDisplay.propTypes = {
+  fruits: PropTypes.string.isRequired
 }
 
 export default FruitCardDisplay
