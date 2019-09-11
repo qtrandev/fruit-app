@@ -35,13 +35,8 @@ const returnFruits = (fruits) => {
 }
 
 class FruitCardDisplay extends Component {
-
   render() {
-    return (
-      <div>
-        {returnFruits(this.props.fruits)}
-      </div>
-    )
+    return returnFruits(this.props.fruits)
   }
 }
 
