@@ -1,3 +1,13 @@
+# Fruit App (React)
+
+![](https://github.com/qtrandev/fruit-app/blob/master/fruit-app1.png)
+
+![](https://github.com/qtrandev/fruit-app/blob/master/fruit-app2.png)
+
+![](https://github.com/qtrandev/fruit-app/blob/master/fruit-app3.png)
+
+![](https://github.com/qtrandev/fruit-app/blob/master/fruit-app4.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
