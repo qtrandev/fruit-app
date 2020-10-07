@@ -12,15 +12,19 @@
 
 Add a ".env" file in the root folder (such as fruit-app/) with the following keys:  
 
+REACT_APP_MAPBOX_TOKEN=pk...  
 REACT_APP_API_KEY=AIz...  
 REACT_APP_AUTH_DOMAIN=...firebaseapp.com. 
 REACT_APP_DATABASE_URL=https://...-db.firebaseio.com  
-REACT_APP_MAPBOX_TOKEN=pk...  
 REACT_APP_MESSAGING_SENDER_ID=79...  
 REACT_APP_PROJECT_ID=fr...  
 REACT_APP_STORAGE_BUCKET=...appspot.com  
 
+## Deploying With Netlify
 
+To deploy with Netlify, add the environment variables in the .env file to the "Build & deploy" settings in the Environment section.  
+Set Build command to: CI= npm run build  
+Set Publish directory to: build/  
 
 ## SonarQube SonarCloud Project
 
