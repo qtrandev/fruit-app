@@ -1,4 +1,4 @@
-# Fruit App (React)
+# Fruit App (React, Redux, Firebase)
 
 ![](https://github.com/qtrandev/fruit-app/blob/master/fruit-app1.png)
 
@@ -9,6 +9,12 @@
 ![](https://github.com/qtrandev/fruit-app/blob/master/fruit-app4.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+# SonarQube SonarCloud Project
+
+[https://sonarcloud.io/dashboard?id=qtrandev_fruit-app](https://sonarcloud.io/dashboard?id=qtrandev_fruit-app)
+
+# Create React App Instructions
 
 ## Available Scripts
 
