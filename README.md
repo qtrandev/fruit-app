@@ -8,13 +8,27 @@
 
 ![](https://github.com/qtrandev/fruit-app/blob/master/fruit-app4.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Environment variables
 
-# SonarQube SonarCloud Project
+Add a ".env" file in the root folder (such as fruit-app/) with the following keys:  
+
+REACT_APP_API_KEY=AIz...  
+REACT_APP_AUTH_DOMAIN=...firebaseapp.com. 
+REACT_APP_DATABASE_URL=https://...-db.firebaseio.com  
+REACT_APP_MAPBOX_TOKEN=pk...  
+REACT_APP_MESSAGING_SENDER_ID=79...  
+REACT_APP_PROJECT_ID=fr...  
+REACT_APP_STORAGE_BUCKET=...appspot.com  
+
+
+
+## SonarQube SonarCloud Project
 
 [https://sonarcloud.io/dashboard?id=qtrandev_fruit-app](https://sonarcloud.io/dashboard?id=qtrandev_fruit-app)
 
 # Create React App Instructions
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
