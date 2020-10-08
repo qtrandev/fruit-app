@@ -1,4 +1,6 @@
 # Fruit App (React, Redux, Firebase)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/81dd2e40-2341-4036-9acf-92d37123ac33/deploy-status)](https://app.netlify.com/sites/fruit-app/deploys)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=qtrandev_fruit-app&metric=alert_status)](https://sonarcloud.io/dashboard?id=qtrandev_fruit-app)
 
 ![](https://github.com/qtrandev/fruit-app/blob/master/fruit-app1.png)
 
