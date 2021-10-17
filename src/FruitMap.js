@@ -185,7 +185,7 @@ function FruitMap( {fruits}) {
                 <img src={rambutan} alt="Rambutan" width="30px" height="30px"></img>
                 <img src={sugarapple} alt="Sugar-apple" width="30px" height="30px"></img>
               </div>
-              <TextareaAutosize id='fruitDescription' rows={5} placeholder="Enter a fruit tip for the selected fruits" />;
+              <TextareaAutosize id='fruitDescription' rows={5} placeholder="Enter a fruit tip for the selected fruits. Select multiple fruits on the left pane. Only recent tips are saved to Firebase with this demo. " />;
               <br/><br/>
               <Button variant="contained" color="primary" onClick={ addFruitTipClick }>Add</Button>
             </CardContent>
