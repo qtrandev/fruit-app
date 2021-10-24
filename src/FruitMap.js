@@ -123,6 +123,7 @@ function FruitMap( {fruits}) {
 
   return (
     <ReactMapGL mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+    mapStyle= 'mapbox://styles/mapbox/streets-v11'
     {...viewport}
     onViewportChange={_onViewportChange}
     onClick={_onClick}
