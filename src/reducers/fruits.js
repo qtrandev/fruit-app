@@ -11,7 +11,7 @@ let initial = [
     id: 101,
     name: 'Jackfruit',
     selection: 'jackfruit',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Jackfruit_hanging.JPG',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Jackfruit_hanging.JPG/100px-Jackfruit_hanging.JPG',
     desc: 'Jackfruits are the best!',
     enabled: false
   },
@@ -19,7 +19,7 @@ let initial = [
     id: 102,
     name: 'Longan',
     selection: 'longan',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Dimocarpus_longan_fruits.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Dimocarpus_longan_fruits.jpg/100px-Dimocarpus_longan_fruits.jpg',
     desc: 'Longans are sweet and tasty!',
     enabled: false
   },
@@ -27,7 +27,7 @@ let initial = [
     id: 103,
     name: 'Rambutan',
     selection: 'rambutan',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Rambutans.JPG/920px-Rambutans.JPG',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Rambutans.JPG/100px-Rambutans.JPG',
     desc: 'Rambutans are delicious!',
     enabled: false
   },
@@ -35,7 +35,7 @@ let initial = [
     id: 104,
     name: 'Sugar-apple',
     selection: 'sugarapple',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/4/48/Sugar_apple_with_cross_section.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Sugar_apple_with_cross_section.jpg/100px-Sugar_apple_with_cross_section.jpg',
     desc: 'Sugar-apples are tasty and custardy!',
     enabled: false
   }
