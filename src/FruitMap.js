@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import React,{ useState } from 'react';
+import React,{ useState, useEffect } from 'react';
 import ReactMapGL, { GeolocateControl, NavigationControl, Marker, Popup } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css'
 import Firebase from './Firebase';
@@ -28,6 +28,10 @@ function FruitMap( {fruits}) {
 
   const [ selectedTip, setSelectedTip ] = useState(null);
   const [ clickLocation, setClickLocation ] = useState(null);
+
+  useEffect(() => {
+    refreshData();
+  }, []);
 
   const geolocateStyle = {
     float: 'left',
