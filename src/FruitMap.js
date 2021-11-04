@@ -184,11 +184,11 @@ function FruitMap( {fruits}) {
               </Typography>
               <br/>
               <div className="fruitSelector">
-                <img src={mango} alt="Mango" width="30px" height="30px"></img>
-                <img src={jackfruit} alt="Jackfruit" width="30px" height="30px"></img>
-                <img src={longan} alt="Longan" width="30px" height="30px"></img>
-                <img src={rambutan} alt="Rambutan" width="30px" height="30px"></img>
-                <img src={sugarapple} alt="Sugar-apple" width="30px" height="30px"></img>
+                {getFruitNavList().indexOf("mango")>=0 && <img src={mango} alt="Mango" width="30px" height="30px"></img>}
+                {getFruitNavList().indexOf("jackfruit")>=0 && <img src={jackfruit} alt="Jackfruit" width="30px" height="30px"></img>}
+                {getFruitNavList().indexOf("longan")>=0 && <img src={longan} alt="Longan" width="30px" height="30px"></img>}
+                {getFruitNavList().indexOf("rambutan")>=0 && <img src={rambutan} alt="Rambutan" width="30px" height="30px"></img>}
+                {getFruitNavList().indexOf("sugarapple")>=0 && <img src={sugarapple} alt="Sugar-apple" width="30px" height="30px"></img>}
               </div>
               <TextareaAutosize id='fruitDescription' rows={5} placeholder="Enter a fruit tip for the selected fruits. Select multiple fruits on the left pane. Only recent tips are saved to Firebase with this demo. " />;
               <br/><br/>
