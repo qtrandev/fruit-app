@@ -23,6 +23,7 @@ a {
   flex-direction: column;
   align-items: center;
   padding: 10px;
+  background: linear-gradient(to top, #00aaff, lightgreen);
 }
 
 .nav-list ul {
